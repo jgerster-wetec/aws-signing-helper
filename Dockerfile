@@ -1,8 +1,8 @@
 FROM ubuntu:jammy
 
-RUN apt update && apt install -y wget curl && apt clean
+RUN apt update && apt install -y wget curl socat && apt clean
 
-ARG HELPER_VERSION=1.1.1
+ARG HELPER_VERSION=1.3.0
 RUN set -e \
     && curl -o /usr/bin/aws_signing_helper --fail https://rolesanywhere.amazonaws.com/releases/${HELPER_VERSION}/X86_64/Linux/aws_signing_helper \
     && chmod +x /usr/bin/aws_signing_helper
